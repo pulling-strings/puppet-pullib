@@ -11,15 +11,19 @@ define pullib::debinstall(
     user    => 'root',
     path    => ['/usr/bin','/bin'],
     unless  => "test -f /usr/src/${deb}"
-  } ->
-  
-  package{$dependencies:
-    ensure  => present
   }
+  
+  if $dependencies != [] {
+    package{$dependencies:
+      ensure  => present
+    } -> Package[$name]
+  }
+
   package{$name:
     ensure   => latest,
     source   => "/usr/src/${deb}",
-    provider => dpkg
+    provider => dpkg,
+    require  => Exec["download ${name} deb"]
   }
 
 }
