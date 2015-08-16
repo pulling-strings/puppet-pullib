@@ -1,0 +1,14 @@
+{
+  "name": "strings-pullib",
+  "version": "0.0.1",
+  "author": "Ronen Narkis <narkisr@gmail.com>",
+  "summary": "Common types and resources from pulling-strings org",
+  "license": "Apache 2.0",
+  "source": "https://github.com/pulling-strings/puppet-pullib",
+  "project_page": "https://github.com/pulling-strings/puppet-pullib",
+  "issues_url": "https://github.com/pulling-strings/puppet-pullib/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
