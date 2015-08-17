@@ -23,7 +23,6 @@ define pullib::debinstall(
     ensure   => latest,
     source   => "/usr/src/${deb}",
     provider => dpkg,
-    require  => Exec["download ${name} deb"]
+    require  => Exec["download ${name} deb"],
   }
-
 }
